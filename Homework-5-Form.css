@@ -1,0 +1,100 @@
+body {
+    font-family: 'Ubuntu', 'Noto Sans SC', sans-serif;
+    color: #37474F;
+    background-color: #ECEFF1;
+    margin: 2em;
+    font-size: calc(min(1.5vw, 16px));
+}
+
+/* —— layout —— */
+
+body, header, main, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form    { width: 45em; }
+article { width: 40em; }
+
+h1, h2, legend {
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+fieldset {
+    border: none;
+    margin: 0.5em;
+}
+
+fieldset div {
+    display: flex;
+    align-items: center;
+}
+
+ul, p, fieldset div {
+    margin: 0.25em;
+}
+
+/* —— fonts —— */
+
+footer {
+    color: #607D8B;
+}
+
+mark {
+    background-color: transparent;
+    color: #E91E63;
+}
+
+label {
+    font-size: 1.15em;
+    width: 12em;
+    text-align: right;
+    margin-right: 1em;
+}
+
+label.checkbox {
+    font-size: inherit;
+    width: inherit;
+    text-align: inherit;
+}
+
+/* —— inputs —— */
+
+input, select, textarea {
+    font-family: 'Ubuntu', 'Noto Sans SC', sans-serif;
+    font-size: inherit;
+    padding: 0.25em;
+    border-radius: 0.5em;
+    border: #CFD8DC 1px solid;
+    border-bottom: #CFD8DC 3px solid;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-bottom: #2196F3 3px solid;
+}
+
+input[type="submit"] {
+    font-size: large;
+    color: #ECEFF1;
+    background-color: #2196F3;
+    border: none;
+    border-radius: 1em;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 0.3em;
+}
+
+textarea {
+    padding: 0.5em;
+}

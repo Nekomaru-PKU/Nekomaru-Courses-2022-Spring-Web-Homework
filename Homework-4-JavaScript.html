@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Try Your Luck - Nekomaru(at)pku.edu.cn</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #ECEFF1;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #container {
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #button {
+            font-size: 1.5rem;
+            color: white;
+            background-color: #1E88E5;
+            border-style: none;
+            box-shadow: 1px 1px 5px gray;
+            border-radius: 2em;
+            margin: 0.5rem;
+            padding: 0.3rem 2rem;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        #bar {
+            height: 1rem;
+            margin: 1rem;
+            box-shadow: 1px 1px 5px gray;
+        }
+
+        #luck-container {
+            height: 12rem;
+            display: flex;
+        }
+
+        #luck {
+            text-shadow: 1px 1px 5px gray;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        #watermark {
+            position: absolute;
+            color: #607D8B;
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+    <script>
+        const colors = "FF5722 FF9800 FFC107 FFEB3B CDDC39 8BC34A 4CAF50".split(' ');
+        let progress = { val: 100 };
+        let interval = null;
+
+        const nextLuck = () => {
+            const luckElement = document.getElementById('luck');
+            const barElement = document.getElementById('bar');
+            const buttomElement = document.getElementById('button');
+            const luck = Math.random();
+            const luckColor = colors[Math.ceil(luck * colors.length) - 1];
+            luckElement.textContent = `${Math.round(luck * 100)}`;
+            luckElement.style.fontSize = `${luck * 8 + 4}rem`;
+            luckElement.style.color = `#${luckColor}`;
+            barElement.style.width = `${Math.round(luck * 100) * 0.5}vw`
+            barElement.style.backgroundColor = `#${luckColor}`;
+            buttomElement.style.backgroundColor = `#${luckColor}`;
+
+            progress.val += 5;
+            if (progress.val >= 100)
+                clearInterval(interval);
+        };
+
+        const nextWatermark = () => {
+            const watermarkElement = document.getElementById('watermark');
+            if (Math.random() < 0.5)
+                watermarkElement.style.left     = "2em",
+                watermarkElement.style.right    = "auto";
+            else
+                watermarkElement.style.left     = "auto",
+                watermarkElement.style.right    = "2em";
+            if (Math.random() < 0.5)
+                watermarkElement.style.top      = "2em",
+                watermarkElement.style.bottom   = "auto";
+            else
+                watermarkElement.style.top      = "auto",
+                watermarkElement.style.bottom   = "2em";
+        }
+
+        const next = () => {
+            if (progress.val >= 100) {
+                progress.val = 0;
+                interval = setInterval(nextLuck, 50);
+                nextWatermark();
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <button id="button" onclick="next();">Try your luck</button>
+        <div id="bar"></div>
+        <div id="luck-container">
+            <div id="luck"></div>
+        </div>
+    </div>
+    <div id="watermark">Nekomaru(at)pku.edu.cn, licensed under GPLv3</div>
+</body>
+
+</html>

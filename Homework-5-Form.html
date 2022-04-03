@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轻策庄文理学院历史学社“地中之盐”主题合宿报名表 - Nekomaru(at)pku.edu.cn</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Homework-5-Form.css">
+    
+    <script>
+        function onchanged() {
+            document.getElementsByClassName('if-bus0')[0].style.display =
+                document.getElementById('bus0-0').checked
+                    ? 'flex'
+                    : 'none';
+            document.getElementsByClassName('if-talent')[0].style.display =
+            document.getElementsByClassName('if-talent')[1].style.display =
+                document.getElementById('talent').checked
+                    ? 'flex'
+                    : 'none';
+            document.getElementsByClassName('if-shirt')[0].style.display =
+            document.getElementsByClassName('if-shirt')[1].style.display =
+            document.getElementsByClassName('if-shirt')[2].style.display =
+                document.getElementById('shirt').checked
+                    ? 'flex'
+                    : 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>轻策庄文理学院历史学社“地中之盐”主题合宿报名表</h1>
+        <aside></aside>
+    </header>
+    <main>
+        <article>
+            <h2>关于此次合宿</h2>
+            <p>为庆祝层岩巨渊解除封控，我社计划于本周末组织一次以璃月古迹“地中之盐”为主题的合宿和野外考察活动。我们的行程安排是：</p>
+            <ul>
+                <li>活动首日 4.2 周六下午，我们组织大巴由学校东南门出发，首先前往荻花洲采风，之后在望舒客栈休憩，当晚在望舒客栈举行才艺晚会；</li>
+                <li>次日 4.3 我们将由考古文博学院教授，知名学者，我社指导老师钟离教授带队，前往“地中之盐”古盐神遗址考察；</li>
+                <li>第三日 4.4 上午乘大巴返回学校。</li>
+            </ul>
+            <p><mark>填写报名表后请加副社长微信 Keqingqqq，发送 72 小时内核酸阴性报告并转账 648 摩拉报名费，</mark>包含餐品和住宿费用等。</p>
+        </article>
+        <form action="https://postman-echo.com/post" method="post">
+            <fieldset>
+                <legend>基本信息</legend>
+                <div>
+                    <label for="student-name">姓名</label>
+                    <input id="student-name" name="student-name"
+                        type="text" placeholder="姓名" required maxlength="6">
+                </div>
+                <div>
+                    <label for="student-id">学号</label>
+                    <input id="student-id" name="student-id"
+                        type="text" placeholder="十位学号，如 1900012345"
+                        required pattern="\d{10}$">
+                </div>
+                <div>
+                    <label for="gender">性别</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="student-dept">院系</label>
+                    <input id="student-dept" name="student-dept"
+                        type="text" placeholder="院系" required>
+                </div>
+                <div>
+                    <label for="student-grade">年级</label>
+                    <select id="student-grade" name="student-grade" required>
+                        <option value="">大一</option>
+                        <option value="1">大二</option>
+                        <option value="2">大三</option>
+                        <option value="3">大四</option>
+                        <option value="4">研究生</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="genshin-level">冒险等级</label>
+                    <input id="genshin-level" name="genshin-level"
+                        type="number" value="55" required min="1" max="60">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>行程信息</legend>
+                <div>
+                    <label>去程交通方式</label>
+                    <input id="bus0-0" name="bus0"
+                        type="radio" value="1" checked
+                        onclick="onchanged();">
+                    <label for="bus0-0" class="checkbox">大巴</label>
+                    <input id="bus0-1" name="bus0"
+                        type="radio" value="0"
+                        onclick="onchanged();">
+                    <label for="bus0-1" class="checkbox">
+                        自驾（导航目的地：望舒客栈北二停车场）
+                    </label>
+                </div>
+                <div class="if-bus0">
+                    <label for="bus0-time">发车时间</label>
+                    <select id="bus0-time" name="bus0-time">
+                        <option value="0">04.02 周六下午 13:00 ~ 13:30</option>
+                        <option value="1">04.02 周六下午 13:30 ~ 14:00</option>
+                        <option value="2">04.02 周六下午 14:00 ~ 14:30</option>
+                        <option value="3">04.02 周六下午 14:30 ~ 15:00</option>
+                    </select>
+                </div>
+                <div>
+                    <label>回程交通方式</label>
+                    <input id="bus1-0" name="bus1"
+                        type="radio" value="1" checked>
+                    <label for="bus1-0" class="checkbox">大巴</label>
+                    <input id="bus1-1" name="bus1"
+                        type="radio" value="0">
+                    <label for="bus1-1" class="checkbox">自驾</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>晚会节目报名</legend>
+                <div>
+                    <label for="talent">报名晚会节目</label>
+                    <input id="talent" name="talent"
+                        type="checkbox" onchange="onchanged();">
+                </div>
+                <div class="if-talent">
+                    <label for="telent-type">节目类型</label>
+                    <select id="telent-type" name="telent-type">
+                        <option value="0">音乐类</option>
+                        <option value="1">舞蹈类</option>
+                        <option value="4">语言类</option>
+                        <option value="5">其他类</option>
+                    </select>
+                </div>
+                <div class="if-talent">
+                    <label for="telent-desc">节目简介</label>
+                    <textarea id="telent-desc" name="telent-desc"
+                        placeholder="简单介绍一下你的节目吧"
+                        rows="6" cols="45"></textarea>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>“地中之盐”主题纪念T恤衫团购</legend>
+                <div>
+                    <label for="shirt">购买纪念T恤衫</label>
+                    <input id="shirt" name="shirt"
+                        type="checkbox" onclick="onchanged();">
+                </div>
+                <div class="if-shirt">
+                    <label for="shirt-size">尺码</label>
+                    <select id="shirt-size" name="shirt-size">
+                        <option value="0">S</option>
+                        <option value="1">M</option>
+                        <option value="2">L</option>
+                        <option value="3">XL</option>
+                        <option value="4">XXL</option>
+                    </select>
+                </div>
+                <div class="if-shirt">
+                    <label for="shirt-color">颜色</label>
+                    <select id="shirt-color" name="shirt-color">
+                        <option value="0">霆霓快雨·紫色款</option>
+                        <option value="1">星天水镜·蓝色款</option>
+                        <option value="2">琉焰华舞·红色款</option>
+                        <option value="3">掩月天权·黄色款</option>
+                        <option value="4">尘世闲游·钟离教授联名款（需额外转账 1200 摩拉）</option>
+                    </select>
+                </div>
+                <div class="if-shirt">
+                    <label for="shirt-count">数量</label>
+                    <input id="shirt-count" name="shirt-count"
+                        type="number" value="1" placeholder="1" min="1" max="2">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>其它信息</legend>
+                <div>
+                    <label for="insurance">购买团体意外险</label>
+                    <input id="insurance" name="insurance" type="checkbox">
+                    <span>* 由璃月往生堂保险集团提供，需额外转账 30 摩拉</span>
+                </div>
+            </fieldset>
+            <input type="submit" value="提交">
+        </form>
+    </main>
+    <footer>
+        <p>本报名表及其中提及的组织和个人纯属虚构，如有雷同纯属巧合。</p>
+        <p>Nekomaru(at)pku.edu.cn, licensed under GPLv3</p>
+    </footer>
+    <script>onchanged();</script>
+</body>
+
+</html>
